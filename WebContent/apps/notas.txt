@@ -1,0 +1,22 @@
+Instalación del front-end con librerias dinamicas
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
+* Para que el proyecto tenga ir a la parte de front de la aplicación (DesignPatterns/WebContent/apps) y correr:
+
+$ npm init 
+
+Eso pide una serie de pasos y ayuda a crear el archivo package.json
+
+Instalación de jQuery (https://www.npmjs.com/package/jquery)
+.....................
+$ npm install jquery --save
+
+
+Listar paquetes instalados con npm
+..................................
+Para listar los paquetes instalados con npm:
+
+$ npm list
+
+
+
