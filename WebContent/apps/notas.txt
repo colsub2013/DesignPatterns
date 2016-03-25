@@ -1,6 +1,4 @@
 https://mrhanlon.com/posts/using-npm-bower-and-grunt-with-maven/
-
-
 Instalación del front-end con librerias dinamicas
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
