@@ -1,0 +1,22 @@
+{
+  "name": "design-patterns",
+  "description": "Design patterns for app webs, raw Java and javascript",
+  "main": "index.js",
+  "authors": [
+    "maximiliano.contini <maximiliano.contini@neoris.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/colsub2013/DesignPatterns",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

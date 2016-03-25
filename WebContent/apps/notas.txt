@@ -10,7 +10,9 @@ Eso pide una serie de pasos y ayuda a crear el archivo package.json
 
 Instalación de jQuery (https://www.npmjs.com/package/jquery)
 .....................
-$ npm install jquery --save
+En directorio que contiene package.json:
+
+$ npm install jquery --save 
 
 
 Listar paquetes instalados con npm
@@ -44,4 +46,90 @@ Allows changes that do not modify the left-most non-zero digit in the [major, mi
     ^0.0 (means >=0.0.0 <0.1.0)
         
 
+Instalacion de Bower (http://blog.teamtreehouse.com/getting-started-bower)
+....................
+Como se instala a traves de npm, en directorio que contiene package.json:
+
+$ npm install bower --save
+
+Hecho esto hay que crear el archivo bower.json en la ruta que se ejecute desde
+una consola de (DOS)>:
+
+(DOS)> bower init 
+
+El comando anterior lo lleva a traves de un asistente para crear ese archivo
+
+Buscar librerias con Bower
+.......................... 
+$ bower search bootstrap
+Search results:
+
+    bootstrap git://github.com/twbs/bootstrap.git
+    angular-bootstrap git://github.com/angular-ui/bootstrap-bower.git
+    bootstrap-sass-official git://github.com/twbs/bootstrap-sass.git
+    sass-bootstrap git://github.com/jlong/sass-bootstrap.git
+    bootstrap-datepicker git://github.com/eternicode/bootstrap-datepicker.git
+    bootstrap-select git://github.com/silviomoreto/bootstrap-select.git
+    angular-ui-bootstrap-bower git://github.com/angular-ui/bootstrap-bower
+    angular-ui-bootstrap git://github.com/angular-ui/bootstrap.git
+    bootstrap-daterangepicker git://github.com/dangrossman/bootstrap-daterangepicker.git
+    bootstrap-timepicker git://github.com/jdewit/bootstrap-timepicker
+    bootstrap-switch git://github.com/nostalgiaz/bootstrap-switch.git
+    bootstrap-css git://github.com/jozefizso/bower-bootstrap-css.git
+    select2-bootstrap-css git://github.com/t0m/select2-bootstrap-css.git
+    eonasdan-bootstrap-datetimepicker git://github.com/Eonasdan/bootstrap-datetimepicker.git
+    seiyria-bootstrap-slider git://github.com/seiyria/bootstrap-slider.git
+    angular-bootstrap-colorpicker git://github.com/buberdds/angular-bootstrap-colorpicker.git
+    bootstrap-multiselect git://github.com/davidstutz/bootstrap-multiselect.git
+    bootstrap.css git://github.com/bowerjs/bootstrap.git
+    bootstrap-datetimepicker git://github.com/tarruda/bootstrap-datetimepicker.git
+    angular-bootstrap-datetimepicker git://github.com/dalelotts/angular-bootstrap-datetimepicker
+    bootstrap-modal git://github.com/jschr/bootstrap-modal.git
+    bootstrap-tour git://github.com/sorich87/bootstrap-tour.git
+    bootstrap-tagsinput git://github.com/TimSchlechter/bootstrap-tagsinput.git
+    bootstrap-additions git://github.com/mgcrea/bootstrap-additions.git
+    bootstrap-file-input git://github.com/grevory/bootstrap-file-input.git
+    angular-bootstrap-switch git://github.com/frapontillo/angular-bootstrap-switch.git
+
+Listar paquetes instalados con Bower
+....................................
+$ bower list
+
+Actualizar paquetes instalados con Bower
+........................................
+$ bower update
+$ bower update <nombrepackage>
+
+Desinstalar paquetes instalados con Bower
+........................................
+$ bower uninstall <nombrepackage>
+
+
+nodejs/Grunt/Bower/npm con Maven
+::::::::::::::::::::::::::::::::
+nodejs/Grunt/Bower/npm se integran con Maven con ejecuciones de plugins cargadas en pom.xml:
+
+<plugin>
+	<executions>
+		<execution>
+			<!-- Codigo nodejs -->
+		</execution>
+		<execution>
+			<!-- Codigo npm -->
+		</execution>
+		<execution>
+			<!-- Codigo bower -->
+		</execution>
+		<execution>
+			<!-- Codigo Grunt -->
+		</execution>
+		...
+	</executions>
+</plugin>
+
+La instalacion de todos los paquetes se hace corriendo:
+
+$ mvn install
+
+sobre el directorio que se encuentra pom.xml
 

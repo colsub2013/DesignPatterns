@@ -56,7 +56,6 @@
 							<arguments>install</arguments>
 						</configuration>
 					</execution>
-					<!--  
 					<execution>
 						<id>bower install</id>
 						<goals>
@@ -66,6 +65,7 @@
 							<arguments>install</arguments>
 						</configuration>
 					</execution>
+					<!-- 
 					<execution>
 						<id>grunt build</id>
 						<goals>
