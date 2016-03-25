@@ -1,7 +1,7 @@
 package patterns.abstractFactory;
 
 /**
- * Objetivo:
+ * CREACIONAL - Objetivo:
  * 
  * Provee una interfaz a usar para crear familias de objetos relacionados
  * (dependientes) sin especificar sus clases concretas
