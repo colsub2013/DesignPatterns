@@ -1,0 +1,5 @@
+/target
+/.settings
+!/WebContent
+!/WebContent/apps
+/WebContent/apps/node_modules

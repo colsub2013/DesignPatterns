@@ -1,0 +1,49 @@
+https://mrhanlon.com/posts/using-npm-bower-and-grunt-with-maven/
+
+
+Instalación del front-end con librerias dinamicas
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
+* Para que el proyecto tenga ir a la parte de front de la aplicación (DesignPatterns/WebContent/apps) y correr:
+
+$ npm init 
+
+Eso pide una serie de pasos y ayuda a crear el archivo package.json
+
+Instalación de jQuery (https://www.npmjs.com/package/jquery)
+.....................
+$ npm install jquery --save
+
+
+Listar paquetes instalados con npm
+..................................
+Para listar los paquetes instalados con npm:
+
+$ npm list
+
+Verificar versionado en package.json
+....................................
+
+Hyphen Ranges X.Y.Z - A.B.C
+1.2.3-2.3.4
+Indicates >=1.2.3 <=2.3.4
+
+X-Ranges
+1.2.x
+1.X 
+1.2.*
+
+Tilde Ranges
+~1.2.3
+~1.2
+Indicates allowing patch-level changes or minor version changes. (~1.2.3 => means >=1.2.0 <1.2.x)
+
+Caret Ranges ^1.2.3 ^0.2.5 ^0.0.4
+
+Allows changes that do not modify the left-most non-zero digit in the [major, minor, patch] tuple
+    ^1.2.x (means >=1.2.0 <2.0.0)
+    ^0.0.x (means >=0.0.0 <0.1.0)
+    ^0.0 (means >=0.0.0 <0.1.0)
+        
+
+
