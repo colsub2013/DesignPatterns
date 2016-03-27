@@ -12,9 +12,4 @@ public class ConcreteFactory1 implements AbstractFactoryIF {
 		return new ProductA1();
 	}
 
-	@Override
-	public AbstractProductBIF createProductB() {
-		return new ProductB1();
-	}
-
 }

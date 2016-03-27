@@ -7,5 +7,4 @@ package patterns.abstractFactory;
  */
 public interface AbstractFactoryIF {
 	public AbstractProductAIF createProductA();
-	public AbstractProductBIF createProductB();
 }

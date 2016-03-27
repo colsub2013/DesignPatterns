@@ -48,15 +48,11 @@ package patterns.abstractFactory;
  * 
  * 2. Se crean objetos a traves de la instanciacion anterior (nivel inferior) 
  * AbstractProductAIF prod1 = factoryOne.createProductA();
- * AbstractProductBIF prod2 = factoryOne.createProductB();
- * AbstractProductAIF prod3 = factoryTwo.createProductA();
- * AbstractProductBIF prod4 = factoryTwo.createProductB();
+ * AbstractProductAIF prod2 = factoryTwo.createProductA();
  * 
  * 3. Se ejecutan metodos de los objetos factories creados:
  * prod1.actionA();
- * prod2.actionB();
- * prod3.actionA();
- * prod4.actionB();
+ * prod2.actionA();
  * 
  * (Las instanciaciones son siempre a nivel interfaz)
  * *********************************************************************
@@ -69,15 +65,11 @@ public class AbstractFactoryPattern {
 		
 		// Se crean objetos via Abstract Factory
 		AbstractProductAIF prod1 = factoryOne.createProductA();
-		AbstractProductBIF prod2 = factoryOne.createProductB();
-		AbstractProductAIF prod3 = factoryTwo.createProductA();
-		AbstractProductBIF prod4 = factoryTwo.createProductB();
+		AbstractProductAIF prod2 = factoryTwo.createProductA();
 		
 		// Ejecucion de los métodos de los objetos creados
 		prod1.actionA();
-		prod2.actionB();
-		prod3.actionA();
-		prod4.actionB();
+		prod2.actionA();
 		
 	}
 }
