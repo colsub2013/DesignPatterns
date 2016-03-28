@@ -1,5 +1,9 @@
 package patterns.structural.composite;
 
+/**
+ * 	Clase abstracta (no instanciable) que contiene la declaracion
+ * 	de metodos de ejecucion
+ */
 public abstract class Component {
 	
 	public abstract void display();

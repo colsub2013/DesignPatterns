@@ -1,5 +1,47 @@
 package patterns.structural.composite;
 
+/**
+ * 	ESTRUCTURAL - Objetivo:
+ * 	
+ * 	Permite a clientes operar de manera generica sobre objetos
+ *
+ *	Define jerarquias de clase consistentes de objetos primitivo y complejo
+ *
+ * 	Provee flexibilidad de estructura con una interfaz manejable
+ * 
+ * *********************************************************************
+ *	Usar en casos de:
+ *	
+ *	Representar una jerarquia de objetos total o parcial
+ *
+ *	Clientes capaces de ignorar diferencias entre objetos variantes en la
+ *	jerarquia
+ *
+ *	Estructura dinamica con cualquier nivel de complejidad
+ * 
+ * *********************************************************************
+ * 	Forma de armarlo:
+ * 
+ * 	Crear una clase abstracta componente con algun metodo abstracto 
+ *  y los demas no abstractos
+ *  (Component)
+ *  
+ *  Crear una clase Composite (compuesto) que extienda la clase abstracta componente
+ *  e implemente todos los metodos declarados en esta
+ *  (Composite)
+ *  
+ *  Crear una clase Leaf que extiende la clase abstracta componente y redefine
+ *  solo ciertos metodos necesarios de esa clase (no es obligatorio redefinir todos
+ *  los metodos no abstractos de la clase componente). 
+ *  Esta clase contiene la estructura.
+ *  (Leaf)
+ *  	
+ * 	En el main, se instancian por ejemplo ciertos componentes en la estructura de un arbol 
+ *  mediante referencias a la clase componente e instancias de objetos tanto a la estructura 
+ *  como al composite, y se usan metodos redefinidos del composite para agregarlos o removerlos
+ *	
+ * *********************************************************************
+ */
 public class CompositePattern {
 
 	public static void main(String[] args) {

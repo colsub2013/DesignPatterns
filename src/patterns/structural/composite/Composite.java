@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ *	Clase que redefine metodos de la clase abstracta componente por subclassing. 
+ *  Dichos metodos son de utilidad e involucran cierta logica. 
+ */
 public class Composite extends Component {
 
 	String name = null;

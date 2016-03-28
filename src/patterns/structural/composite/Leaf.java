@@ -1,5 +1,10 @@
 package patterns.structural.composite;
 
+/**
+ * 	Clase que tambien extiende la clase abstracta componente 
+ * 	pero redefine solo ciertos metodos
+ * 
+ */
 public class Leaf extends Component {
 	
 	private final String name;
