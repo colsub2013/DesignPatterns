@@ -1,4 +1,4 @@
-package patterns.behavioural;
+package patterns.behavioural.chainOfResponsability;
 
 /**
  *	2. Interfaz para procesar la peticion,

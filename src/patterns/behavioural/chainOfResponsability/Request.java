@@ -1,4 +1,4 @@
-package patterns.behavioural;
+package patterns.behavioural.chainOfResponsability;
 
 /**
  *	1. Primero se crea una clase peticion que 

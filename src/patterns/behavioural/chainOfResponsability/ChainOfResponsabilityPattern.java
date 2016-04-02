@@ -1,4 +1,4 @@
-package patterns.behavioural;
+package patterns.behavioural.chainOfResponsability;
 
 /**
  * 	COMPORTAMIENTO - Objetivo:

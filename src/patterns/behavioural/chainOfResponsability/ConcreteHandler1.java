@@ -1,4 +1,4 @@
-package patterns.behavioural;
+package patterns.behavioural.chainOfResponsability;
 
 /**
  * 	4. Se crea una clase handler concreto que implementa 
