@@ -1,14 +1,14 @@
 https://mrhanlon.com/posts/using-npm-bower-and-grunt-with-maven/
-Instalación del front-end con librerias dinamicas
+Instalaciï¿½n del front-end con librerias dinamicas
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
-* Para que el proyecto tenga ir a la parte de front de la aplicación (DesignPatterns/WebContent/apps) y correr:
+* Para que el proyecto tenga ir a la parte de front de la aplicaciï¿½n (DesignPatterns/WebContent/apps) y correr:
 
 $ npm init 
 
 Eso pide una serie de pasos y ayuda a crear el archivo package.json
 
-Instalación de jQuery (https://www.npmjs.com/package/jquery)
+Instalaciï¿½n de jQuery (https://www.npmjs.com/package/jquery)
 .....................
 En directorio que contiene package.json:
 
@@ -57,7 +57,7 @@ una consola de (DOS)>:
 
 (DOS)> bower init 
 
-El comando anterior lo lleva a traves de un asistente para crear ese archivo
+El commando anterior lo lleva a traves de un asistente para crear ese archivo
 
 Buscar librerias con Bower
 .......................... 

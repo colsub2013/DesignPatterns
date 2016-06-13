@@ -1,9 +1,9 @@
 package patterns.behavioural.command;
 
 /**
- *	5. Clase invocador la cual contiene un metodo para almacenar comandos tomando 
+ *	5. Clase invocador la cual contiene un metodo para almacenar commandos tomando 
  *  como argumento una referencia al comando abstracto y contiene un metodo 
- *  invocador que invoca al metodo de ejecución con la referencia a ese comando abstracto 
+ *  invocador que invoca al metodo de ejecuciï¿½n con la referencia a ese comando abstracto 
  */
 public class Invoker {
 	
