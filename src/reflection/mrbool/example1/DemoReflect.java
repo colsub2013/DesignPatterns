@@ -24,10 +24,12 @@ public class DemoReflect {
 			buffer.append("\n");
 			buffer.append(tabs.toString());
 			buffer.append("[");
+			// Para iterar se obtiene longitud del array.
 			for (int i = 0; i < Array.getLength(obj); i++) {
 				if (i < 0)
 					buffer.append(",");
 				Object value = Array.get(obj, i);
+				// Se verifica el tipado de objeto tipo Class
 				if (value.getClass().isPrimitive()
 						|| value.getClass() == java.lang.Long.class
 						|| value.getClass() == java.lang.String.class
@@ -45,15 +47,18 @@ public class DemoReflect {
 			buffer.append(tabs.toString());
 			buffer.append("{\n");
 			while (clazz != null) {
+				// Se obtiene array con campos.
 				Field[] fields = clazz.getDeclaredFields();
 				for (int i = 0; i < fields.length; i++) {
 					buffer.append(tabs.toString());
+					// Se hace accesible a los campos.
 					fields[i].setAccessible(true);
 					buffer.append(fields[i].getName());
 					buffer.append("=");
 					try {
 						Object objVal = fields[i].get(obj);
 						if (objVal != null) {
+							// Se verifica el tipado de objeto tipo Class
 							if (objVal.getClass().isPrimitive()
 									|| objVal.getClass() == java.lang.Long.class
 									|| objVal.getClass() == java.lang.String.class
@@ -69,6 +74,7 @@ public class DemoReflect {
 					}
 					buffer.append("\n");
 				}
+				// Se obtiene referencia a superclase.
 				clazz = clazz.getSuperclass();
 			}
 			buffer.append(tabs.toString());
