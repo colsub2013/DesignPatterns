@@ -3,7 +3,7 @@ package threads;
 public class PerformanceThreadsMain {
 
 	public static void main(String[] args) {
-		ObjetoEjecucionLogica oel = new ObjetoEjecucionLogica();
+		ObjetoEjecucionLogicaThreads oel = new ObjetoEjecucionLogicaThreads();
 		oel.ejecutarLogica();
 	}
 

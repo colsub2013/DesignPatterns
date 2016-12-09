@@ -1,13 +1,14 @@
 package threads;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public abstract class AbstractThreads {
 	
-  	private Integer numThreadsPool = 5;
+  	private Integer numThreadsPool = 20;
 	
 	/* Servicio para ejecutar threads */
 	private ExecutorService executor;
@@ -23,38 +24,42 @@ public abstract class AbstractThreads {
 	
 	public void action(String elementoEjecucion, Object... params) {
 		// Colocar aqui logica de negocio.
+		int[] array = new int[10000];
+		for (int i = 0; i < array.length; i++) {
+			new CargaDTO(Math.random(), "CARGA", new Date());
+		}
 		System.out.println(elementoEjecucion + " : " + params[0] + " : " + params[1]);
 	}
 	
 	public void shutdownRunnableAction(ElementoThreadRunnable current, boolean tieneErrores, Throwable e) {
 		if (!threadElementotError) {
-			threadElementotError = tieneErrores;
+			this.threadElementotError = tieneErrores;
 			this.e = e;
 		}
 		this.threadsElementos.remove(current);
 	}
 	
 	protected void paralelizarElementos(String elementoEjecucion, Object... params) {
-		executor = Executors.newFixedThreadPool(numThreadsPool);
-		ejecutarHiloElemento(elementoEjecucion, params);
+		this.executor = Executors.newFixedThreadPool(numThreadsPool);
+		this.ejecutarHiloElemento(elementoEjecucion, params);
 	}
 	
 	/* Dispara un thread */
 	private void ejecutarHiloElemento(String elementoEjecucion, Object... params) {
 		ElementoThreadRunnable runnable = new ElementoThreadRunnable(elementoEjecucion, this, params);
-		executor.execute(runnable);
-		threadsElementos.add(runnable);
+		this.executor.execute(runnable);
+		this.threadsElementos.add(runnable);
 	}
 	
 	protected Boolean waitParalelizarElementos() {
-		while (!threadsElementos.isEmpty()) {
+		while (!this.threadsElementos.isEmpty()) {
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
-				threadsElementos.clear();
+				this.threadsElementos.clear();
 			}
 		}
-		return threadElementotError;
+		return this.threadElementotError;
 	}
 
 }

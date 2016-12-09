@@ -16,10 +16,10 @@ public class ElementoThreadRunnable implements Runnable {
 	@Override
 	public void run() {
 		try {
-			abstractThreads.action(elementoEjecucion, params);
-			abstractThreads.shutdownRunnableAction(this, false, null);
+			this.abstractThreads.action(elementoEjecucion, params);
+			this.abstractThreads.shutdownRunnableAction(this, false, null);
 		} catch (Exception e) {
-			abstractThreads.shutdownRunnableAction(this, true, e);
+			this.abstractThreads.shutdownRunnableAction(this, true, e);
 		}
 		
 	}
