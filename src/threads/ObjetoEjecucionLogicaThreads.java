@@ -3,14 +3,19 @@ package threads;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *	Contiene la logica de procesamiento en ambos escenarios:
+ *	Con y sin threads. 
+ */
 public class ObjetoEjecucionLogicaThreads extends AbstractThreads {
 
+	/**
+	 *	Ejecucion de logica para ambos casos con y sin threads. 
+	 */
 	public void ejecutarLogica() {
-
-		// CON THREADS
-
-		long inicioThreads = System.currentTimeMillis();
 		
+		// Lista en la que a cada elemento se le asocia un procesamiento
+		// repetitivo.
 		List<String> lista = new ArrayList<String>();
 		lista.add("1er elemento");
 		lista.add("2do elemento");
@@ -23,6 +28,9 @@ public class ObjetoEjecucionLogicaThreads extends AbstractThreads {
 		lista.add("9no elemento");
 		lista.add("10mo elemento");
 		
+		System.out.println("Con threads - inicio **************************************************************/");
+		long inicioThreads = System.currentTimeMillis();
+		
 		int countThreads = 0;
 		for (String elem : lista) {
 			this.paralelizarElementos("Elemento", elem, countThreads);
@@ -30,15 +38,14 @@ public class ObjetoEjecucionLogicaThreads extends AbstractThreads {
 		}
 		
 		// Se espera que terminen todos los procesamientos de elementos.
-		Boolean error = this.waitParalelizarElementos();
-		
+		this.waitParalelizarElementos();
 		System.out.println("SE EJECUTARON TODOS LOS THREADS");
-		
 		long finThreads = System.currentTimeMillis();
-		
-		System.out.println("Tiempo ejecucion en segs con threads: " + ((finThreads - inicioThreads) * 100));
-		
-		// SIN THREADS
+		System.out.println("Tiempo ejecucion CON THREADS en segs: " + ((finThreads - inicioThreads) * 100));
+
+		System.out.println("Con threads - Fin ****************************************************************/");
+
+		System.out.println("Sin threads - Inicio *************************************************************/");
 		long inicio = System.currentTimeMillis();
 
 		int count = 0;
@@ -48,7 +55,9 @@ public class ObjetoEjecucionLogicaThreads extends AbstractThreads {
 		}
 
 		long fin = System.currentTimeMillis();
+		System.out.println("Tiempo ejecucion SIN THREADS en segs: " + ((fin - inicio) * 100));
 
-		System.out.println("Tiempo ejecucion en segs: " + ((fin - inicio) * 100));
+		System.out.println("Sin threads - Fin ****************************************************************/");
+
 	}
 }

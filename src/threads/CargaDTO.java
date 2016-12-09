@@ -2,6 +2,9 @@ package threads;
 
 import java.util.Date;
 
+/**
+ *	DTO que simula una carga costosa de cada elemento creado. 
+ */
 public class CargaDTO {
 	
 	private double random;
@@ -34,6 +37,7 @@ public class CargaDTO {
 
 	public CargaDTO(double random, String carga, Date fechaActual) {
 		super();
+		// Operacion costosa.
 		int count = 500000;
 		do {
 			count--;
