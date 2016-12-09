@@ -1,4 +1,4 @@
-package threads;
+package threads.ejemplo2;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,11 +6,13 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import threads.dto.CargaDTO;
+
 /**
  * 	Clase abstracta que contiene el motor para correr la logica
  * 	de mejoramiento de performance con threads.
  */
-public abstract class AbstractThreads {
+public class ThreadsEngine {
 	
 	/** Numero de threads en el pool. */
   	private Integer numThreadsPool = 10;
@@ -26,7 +28,7 @@ public abstract class AbstractThreads {
 	
 	/** Error en ejecución de hilos */
 	protected Throwable e;
-	
+
 	/**
 	 *	Contiene la logica de negocio para cada elemento en la lista, la cual se trata
 	 *	de elaborar de forma "costosa" para notar el beneficio de usar los threads.

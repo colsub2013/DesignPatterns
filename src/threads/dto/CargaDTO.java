@@ -1,4 +1,4 @@
-package threads;
+package threads.dto;
 
 import java.util.Date;
 

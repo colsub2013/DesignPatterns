@@ -1,4 +1,4 @@
-package threads;
+package threads.ejemplo1;
 
 /***
  *	Performance en threads
@@ -7,7 +7,7 @@ package threads;
  * 	para mejorar la performance.
  * 
  */
-public class PerformanceThreadsMain {
+public class Ej1PerformanceThreadsMain {
 	
 	/**
 	 *	Se instancia objeto que contiene la logica principal para 
