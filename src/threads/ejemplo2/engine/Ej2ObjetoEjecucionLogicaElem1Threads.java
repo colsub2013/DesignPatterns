@@ -1,13 +1,16 @@
-package threads.ejemplo2;
+package threads.ejemplo2.engine;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import threads.ejemplo2.engine.ThreadsEngine;
+import threads.ejemplo2.runnable.Elemento1ThreadRunnable;
 
 /**
  *	Contiene la logica de procesamiento en ambos escenarios:
  *	Con y sin threads. 
  */
-public class Ej2ObjetoEjecucionLogicaThreads {
+public class Ej2ObjetoEjecucionLogicaElem1Threads {
 
 	/**
 	 *	Ejecucion de logica para ambos casos con y sin threads. 
@@ -30,29 +33,29 @@ public class Ej2ObjetoEjecucionLogicaThreads {
 		lista.add("9no elemento");
 		lista.add("10mo elemento");
 		
-		System.out.println("Con threads - inicio **************************************************************/");
-		long inicioThreads = System.currentTimeMillis();
+		System.out.println("Elemento1 con threads - inicio **************************************************************/");
+		long inicioThreadsElem1 = System.currentTimeMillis();
 		
-		int countThreads = 0;
+		int countThreadsElem1 = 0;
 		for (String elem : lista) {
-			aThreads.paralelizarElementos(Elemento2ThreadRunnable.class, "Elemento", elem, countThreads);
-			countThreads++;
+			aThreads.paralelizarElementos(Elemento1ThreadRunnable.class, "Elemento1", elem, countThreadsElem1);
+			countThreadsElem1++;
 		}
 		
 		// Se espera que terminen todos los procesamientos de elementos.
 		aThreads.waitParalelizarElementos();
-		System.out.println("SE EJECUTARON TODOS LOS THREADS");
-		long finThreads = System.currentTimeMillis();
-		System.out.println("Tiempo ejecucion CON THREADS en segs: " + ((finThreads - inicioThreads) * 100));
+		System.out.println("SE EJECUTARON TODOS LOS THREADS ELEM1");
+		long finThreadsElem1 = System.currentTimeMillis();
+		System.out.println("Tiempo ejecucion CON THREADS Elem1 en segs: " + ((finThreadsElem1 - inicioThreadsElem1) * 100));
 
-		System.out.println("Con threads - Fin ****************************************************************/");
+		System.out.println("Elemento1 con threads - Fin ****************************************************************/");
 
 		System.out.println("Sin threads - Inicio *************************************************************/");
 		long inicio = System.currentTimeMillis();
 
 		int count = 0;
 		for (String elem : lista) {
-			aThreads.action("Elemento", elem, count);
+			aThreads.actionElem1("Elemento", elem, count);
 			count++;
 		}
 
@@ -60,6 +63,6 @@ public class Ej2ObjetoEjecucionLogicaThreads {
 		System.out.println("Tiempo ejecucion SIN THREADS en segs: " + ((fin - inicio) * 100));
 
 		System.out.println("Sin threads - Fin ****************************************************************/");
-
+		
 	}
 }

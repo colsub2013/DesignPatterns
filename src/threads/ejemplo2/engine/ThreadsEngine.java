@@ -1,4 +1,4 @@
-package threads.ejemplo2;
+package threads.ejemplo2.engine;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +7,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import threads.dto.CargaDTO;
+import threads.ejemplo2.runnable.Elemento1ThreadRunnable;
+import threads.ejemplo2.runnable.Elemento2ThreadRunnable;
 
 /**
  * 	Clase abstracta que contiene el motor para correr la logica
@@ -35,13 +37,28 @@ public class ThreadsEngine {
 	 *	@param elementoEjecucion elementoEjecucion
 	 *	@param params params 
 	 */
-	public void action(String elementoEjecucion, Object... params) {
+	public void actionElem1(String elementoEjecucion, Object... params) {
 		// Colocar aqui logica de negocio.
 		int[] array = new int[10000];
 		for (int i = 0; i < array.length; i++) {
 			new CargaDTO(Math.random(), "CARGA", new Date());
 		}
 		System.out.println(elementoEjecucion + " : " + params[0] + " : " + params[1]);
+	}
+	
+	/**
+	 *	Contiene la logica de negocio para cada elemento en la lista, la cual se trata
+	 *	de elaborar de forma "costosa" para notar el beneficio de usar los threads.
+	 *	@param elementoEjecucion elementoEjecucion
+	 *	@param params params 
+	 */
+	public void actionElem2(String elementoEjecucion, Object... params) {
+		// Colocar aqui logica de negocio.
+		int[] array = new int[10000];
+		for (int i = 0; i < array.length; i++) {
+			new CargaDTO(Math.random(), "CARGA", new Date());
+		}
+		System.out.println(elementoEjecucion + " : " + params[0]);
 	}
 	
 	/**
@@ -105,6 +122,7 @@ public class ThreadsEngine {
 	 * 	@return Boolean Boolean
 	 */
 	protected Boolean waitParalelizarElementos() {
+		
 		while (!this.threadsElementos.isEmpty()) {
 			try {
 				Thread.sleep(5000);

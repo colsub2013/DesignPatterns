@@ -1,9 +1,11 @@
-package threads.ejemplo2;
+package threads.ejemplo2.runnable;
+
+import threads.ejemplo2.engine.ThreadsEngine;
 
 /**
  *	Representa a cada thread de la lista que sera procesado. 
  */
-public class Elemento2ThreadRunnable implements Runnable {
+public class Elemento1ThreadRunnable implements Runnable {
 
 	private String elementoEjecucion;
 	private Object[] params;
@@ -15,7 +17,7 @@ public class Elemento2ThreadRunnable implements Runnable {
 	 *	@param threadsEngine threadsEngine
 	 *	@param params params
 	 */
-	public Elemento2ThreadRunnable(String elementoEjecucion,
+	public Elemento1ThreadRunnable(String elementoEjecucion,
 		ThreadsEngine threadsEngine, Object... params) {
 		this.elementoEjecucion = elementoEjecucion;
 		this.params = params;
@@ -29,7 +31,7 @@ public class Elemento2ThreadRunnable implements Runnable {
 	@Override
 	public void run() {
 		try {
-			this.threadsEngine.action(elementoEjecucion, params);
+			this.threadsEngine.actionElem1(elementoEjecucion, params);
 			this.threadsEngine.shutdownRunnableAction(this, false, null);
 		} catch (Exception e) {
 			this.threadsEngine.shutdownRunnableAction(this, true, e);
