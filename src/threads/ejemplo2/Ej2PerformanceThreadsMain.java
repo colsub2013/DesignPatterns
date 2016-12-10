@@ -16,6 +16,8 @@ public class Ej2PerformanceThreadsMain {
 	public static void main(String[] args) {
 		ObjetoEjecucionLogicaThreads oel = new ObjetoEjecucionLogicaThreads();
 		oel.ejecutarLogica();
+		// Se finaliza ejecucion del programa.
+		System.exit(0);
 	}
-
+	
 }

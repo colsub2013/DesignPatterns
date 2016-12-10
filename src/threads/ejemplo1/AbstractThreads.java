@@ -94,6 +94,10 @@ public abstract class AbstractThreads {
 			} catch (InterruptedException e) {
 				this.threadsElementos.clear();
 			}
+			
+			if (this.threadsElementos.isEmpty()) {
+				this.executor.shutdown();
+			}
 		}
 		return this.threadElementotError;
 	}
