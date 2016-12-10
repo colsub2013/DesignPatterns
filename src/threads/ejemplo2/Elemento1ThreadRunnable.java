@@ -3,7 +3,7 @@ package threads.ejemplo2;
 /**
  *	Representa a cada thread de la lista que sera procesado. 
  */
-public class ElementoThreadRunnable implements Runnable {
+public class Elemento1ThreadRunnable implements Runnable {
 
 	private String elementoEjecucion;
 	private Object[] params;
@@ -15,7 +15,7 @@ public class ElementoThreadRunnable implements Runnable {
 	 *	@param threadsEngine threadsEngine
 	 *	@param params params
 	 */
-	public ElementoThreadRunnable(String elementoEjecucion,
+	public Elemento1ThreadRunnable(String elementoEjecucion,
 		ThreadsEngine threadsEngine, Object... params) {
 		this.elementoEjecucion = elementoEjecucion;
 		this.params = params;

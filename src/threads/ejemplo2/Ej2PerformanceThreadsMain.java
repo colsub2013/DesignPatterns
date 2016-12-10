@@ -14,7 +14,7 @@ public class Ej2PerformanceThreadsMain {
 	 *	comparar el procesamiento de una lista de objetos con y sin threads. 
 	 */
 	public static void main(String[] args) {
-		ObjetoEjecucionLogicaThreads oel = new ObjetoEjecucionLogicaThreads();
+		Ej2ObjetoEjecucionLogicaThreads oel = new Ej2ObjetoEjecucionLogicaThreads();
 		oel.ejecutarLogica();
 		// Se finaliza ejecucion del programa.
 		System.exit(0);

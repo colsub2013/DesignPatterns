@@ -24,7 +24,7 @@ public class ThreadsEngine {
 	private Boolean threadElementotError = false;
 	
 	/** Lista con los threads de elementos generados */
-	private List<ElementoThreadRunnable> threadsElementos = new ArrayList<ElementoThreadRunnable>();
+	private List<Object> threadsElementos = new ArrayList<Object>();
 	
 	/** Error en ejecución de hilos */
 	protected Throwable e;
@@ -51,7 +51,14 @@ public class ThreadsEngine {
 	 *	@param tieneErrores tieneErrores
 	 *	@param e e
 	 */
-	public void shutdownRunnableAction(ElementoThreadRunnable current, boolean tieneErrores, Throwable e) {
+	public void shutdownRunnableAction(Object current, boolean tieneErrores, Throwable e) {
+		
+		if (current instanceof Elemento1ThreadRunnable) {
+			current = (Elemento1ThreadRunnable) current; 
+		} else if (current instanceof Elemento2ThreadRunnable) {
+			current = (Elemento2ThreadRunnable) current; 
+		}
+		
 		if (!threadElementotError) {
 			this.threadElementotError = tieneErrores;
 			this.e = e;
@@ -66,9 +73,13 @@ public class ThreadsEngine {
 	 *	@param elementoEjecucion elementoEjecucion
 	 *	@param params params 
 	 */
-	protected void paralelizarElementos(String elementoEjecucion, Object... params) {
+	protected void paralelizarElementos(Class<?> claseRunnable, String elementoEjecucion, Object... params) {
 		this.executor = Executors.newFixedThreadPool(numThreadsPool);
-		this.ejecutarHiloElemento(elementoEjecucion, params);
+		if (claseRunnable == Elemento1ThreadRunnable.class) {
+			this.ejecutarHiloElemento(claseRunnable, elementoEjecucion, params);
+		} else if (claseRunnable == Elemento2ThreadRunnable.class) {
+			this.ejecutarHiloElemento(claseRunnable, elementoEjecucion, params);
+		}
 	}
 	
 	/** 
@@ -76,10 +87,16 @@ public class ThreadsEngine {
 	 * 	@param elementoEjecucion elementoEjecucion
 	 * 	@param params params
 	 */
-	private void ejecutarHiloElemento(String elementoEjecucion, Object... params) {
-		ElementoThreadRunnable runnable = new ElementoThreadRunnable(elementoEjecucion, this, params);
-		this.executor.execute(runnable);
-		this.threadsElementos.add(runnable);
+	private void ejecutarHiloElemento(Class<?> claseRunnable, String elementoEjecucion, Object... params) {
+		if (claseRunnable == Elemento1ThreadRunnable.class) {
+			Elemento1ThreadRunnable runnable = new Elemento1ThreadRunnable(elementoEjecucion, this, params);
+			this.executor.execute(runnable);
+			this.threadsElementos.add(runnable);
+		} else if (claseRunnable == Elemento2ThreadRunnable.class) {
+			Elemento2ThreadRunnable runnable = new Elemento2ThreadRunnable(elementoEjecucion, this, params);
+			this.executor.execute(runnable);
+			this.threadsElementos.add(runnable);
+		}
 	}
 	
 	/** 

@@ -7,7 +7,7 @@ import java.util.List;
  *	Contiene la logica de procesamiento en ambos escenarios:
  *	Con y sin threads. 
  */
-public class ObjetoEjecucionLogicaThreads {
+public class Ej2ObjetoEjecucionLogicaThreads {
 
 	/**
 	 *	Ejecucion de logica para ambos casos con y sin threads. 
@@ -35,7 +35,7 @@ public class ObjetoEjecucionLogicaThreads {
 		
 		int countThreads = 0;
 		for (String elem : lista) {
-			aThreads.paralelizarElementos("Elemento", elem, countThreads);
+			aThreads.paralelizarElementos(Elemento2ThreadRunnable.class, "Elemento", elem, countThreads);
 			countThreads++;
 		}
 		
