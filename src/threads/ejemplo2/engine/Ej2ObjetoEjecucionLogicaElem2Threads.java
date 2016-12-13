@@ -44,7 +44,7 @@ public class Ej2ObjetoEjecucionLogicaElem2Threads {
 		aThreads.waitParalelizarElementos();
 		System.out.println("SE EJECUTARON TODOS LOS THREADS ELEM2");
 		long finThreadsElem2 = System.currentTimeMillis();
-		System.out.println("Tiempo ejecucion CON THREADS Elem2 en segs: " + ((finThreadsElem2 - inicioThreadsElem2) * 100));
+		System.out.println("Tiempo ejecucion CON THREADS Elem2 en segs: " + ((finThreadsElem2 - inicioThreadsElem2) / 1000));
 
 		System.out.println("Elemento2 con threads - Fin ****************************************************************/");
 	}
