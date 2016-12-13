@@ -8,7 +8,7 @@ package patterns.behavioural.command;
  * 
  * 	Separa objeto que invoca la operacion del objeto que realiza la operacion
  * 
- * 	Simplifica el agregado de comandos nuevos, ya que las clases existentes
+ * 	Simplifica el agregado de commandos nuevos, ya que las clases existentes
  * 	no cambian
  * 	
  * *********************************************************************
@@ -36,9 +36,9 @@ package patterns.behavioural.command;
  *  del metodo de ejecucion el cual invoca al metodo de utilidad por medio 
  *  de una referencia a la interfaz receptor
  *  
- *	5. Clase invocador la cual contiene un metodo para almacenar comandos tomando 
+ *	5. Clase invocador la cual contiene un metodo para almacenar commandos tomando 
  *  como argumento una referencia al comando abstracto y contiene un metodo 
- *  invocador que invoca al metodo de ejecución con la referencia a ese comando abstracto 
+ *  invocador que invoca al metodo de ejecuciï¿½n con la referencia a ese comando abstracto 
  * 
  * 	En el main:
  * 
@@ -63,7 +63,7 @@ public class CommandPattern {
 		// Crea receptor
 		ReceiverIF command1 = new Command1();
 		
-		// Crea comandos pasando objetos receptor
+		// Crea commandos pasando objetos receptor
 		CommandAbstract cmdCommand1 = new ConcreteCommand(command1);
 		
 		// Crea invocadores

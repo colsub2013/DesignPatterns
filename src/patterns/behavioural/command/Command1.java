@@ -1,7 +1,7 @@
 package patterns.behavioural.command;
 
 /**
- *	2. Se crea clase comando 1 que implementa 
+ *	2. Se crea clase commando 1 que implementa 
  *  interfaz receptor y contiene metodos con logica de utilidad 
  */
 public class Command1 implements ReceiverIF {

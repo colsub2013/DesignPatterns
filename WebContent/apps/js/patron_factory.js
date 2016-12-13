@@ -26,7 +26,7 @@ $(function() {
 	// Se vincula factory generico a Tipo Car
 	VehicleFactory.prototype.vehicleClass = Car;
 
-	// Se instancia factory que al momento es de tipo Car.
+	// Se instancia factory que al memento es de tipo Car.
 	var carFactory = new VehicleFactory();
 	// Se usa metodo del factory generico.
 	var car = carFactory.getVehicle({ color: "yellow", turbo: true });
@@ -49,11 +49,11 @@ $(function() {
 	// Factory de tipo Truck
 	function TruckFactory() {}
 
-	// Se instancia factory que al momento es de tipo Truck.
+	// Se instancia factory que al memento es de tipo Truck.
 	TruckFactory.prototype = new VehicleFactory();
 	TruckFactory.prototype.vehicleClass = Truck;
 
-	// Se instancia factory que al momento es de tipo Truck.
+	// Se instancia factory que al memento es de tipo Truck.
 	var truckFactory = new TruckFactory();
 	var bigfoot = truckFactory.getVehicle({
 		monster: true, cylinders: 12

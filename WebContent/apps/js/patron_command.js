@@ -57,7 +57,7 @@ $(function() {
 	var arg1 = 100;
 	var arg2 = 24;
 
-	// Se emiten comandos
+	// Se emiten commandos
 	calculator.execute(new AddCommand(arg1));
 	calculator.execute(new SubCommand(arg2));
 
